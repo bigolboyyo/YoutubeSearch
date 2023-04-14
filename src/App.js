@@ -1,23 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import YouTubeSearch from "./YoutubeSearch";
+import "./App.css";
+
+import ToolBar from "./ToolBar";
 
 function App() {
+  const [videoResults, setVideoResults] = useState([]);
+  const [isQueueOpen, setIsQueueOpen] = useState(false);
+  const [queue, setQueue] = useState([]);
+
+  const toggleQueue = () => {
+    setIsQueueOpen(!isQueueOpen);
+  };
+
+  const addToQueue = (video) => {
+    setQueue([...queue, video]);
+  };
+
+  const removeFromQueue = (index) => {
+    setQueue(queue.filter((_, i) => i !== index));
+  };
+
+  const moveUpInQueue = (index) => {
+    if (index > 0) {
+      const newQueue = [...queue];
+      const temp = newQueue[index];
+      newQueue[index] = newQueue[index - 1];
+      newQueue[index - 1] = temp;
+      setQueue(newQueue);
+    }
+  };
+
+  const moveDownInQueue = (index) => {
+    if (index < queue.length - 1) {
+      const newQueue = [...queue];
+      const temp = newQueue[index];
+      newQueue[index] = newQueue[index + 1];
+      newQueue[index + 1] = temp;
+      setQueue(newQueue);
+    }
+  };
+
+  const clearQueue = () => {
+    setQueue([]);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <ToolBar
+          isQueueOpen={isQueueOpen}
+          toggleQueue={toggleQueue}
+          queue={queue}
+          addToQueue={addToQueue}
+          removeFromQueue={removeFromQueue}
+          moveUpInQueue={moveUpInQueue}
+          moveDownInQueue={moveDownInQueue}
+          clearQueue={clearQueue}
+        />
+      </div>
+      <YouTubeSearch
+        queue={queue}
+        setQueue={setQueue}
+        videoResults={videoResults}
+        setVideoResults={setVideoResults}
+      />
     </div>
   );
 }
