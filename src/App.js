@@ -5,7 +5,6 @@ import "./App.css";
 import ToolBar from "./ToolBar";
 
 function App() {
-  const [videoResults, setVideoResults] = useState([]);
   const [isQueueOpen, setIsQueueOpen] = useState(false);
   const [queue, setQueue] = useState([]);
 
@@ -59,12 +58,7 @@ function App() {
           clearQueue={clearQueue}
         />
       </div>
-      <YouTubeSearch
-        queue={queue}
-        setQueue={setQueue}
-        videoResults={videoResults}
-        setVideoResults={setVideoResults}
-      />
+      <YouTubeSearch queue={queue} setQueue={setQueue} />
     </div>
   );
 }

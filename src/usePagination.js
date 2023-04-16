@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function usePagination(itemsPerPage = 5) {
+function usePagination(itemsPerPage) {
   const [currentPage, setCurrentPage] = useState(1);
 
   const goToNextPage = () => {
@@ -21,8 +21,7 @@ function usePagination(itemsPerPage = 5) {
     }
     const start = (currentPage - 1) * itemsPerPage;
     const end = start + itemsPerPage;
-    const pageItems =
-      localStorage.getItem(`page-${currentPage}`) || items.slice(start, end);
+    const pageItems = items.slice(start, end);
     return pageItems;
   };
 
