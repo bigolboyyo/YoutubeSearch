@@ -2,52 +2,52 @@ import { useState } from "react";
 import YouTubeSearch from "./YoutubeSearch";
 import "./App.css";
 
-import ToolBar from "./ToolBar";
+// import ToolBar from "./ToolBar";
 
 function App() {
-  const [isQueueOpen, setIsQueueOpen] = useState(false);
+  // const [isQueueOpen, setIsQueueOpen] = useState(false);
   const [queue, setQueue] = useState([]);
 
-  const toggleQueue = () => {
-    setIsQueueOpen(!isQueueOpen);
-  };
+  // const toggleQueue = () => {
+  //   setIsQueueOpen(!isQueueOpen);
+  // };
 
-  const addToQueue = (video) => {
-    setQueue([...queue, video]);
-  };
+  // const addToQueue = (video) => {
+  //   setQueue([...queue, video]);
+  // };
 
-  const removeFromQueue = (index) => {
-    setQueue(queue.filter((_, i) => i !== index));
-  };
+  // const removeFromQueue = (index) => {
+  //   setQueue(queue.filter((_, i) => i !== index));
+  // };
 
-  const moveUpInQueue = (index) => {
-    if (index > 0) {
-      const newQueue = [...queue];
-      const temp = newQueue[index];
-      newQueue[index] = newQueue[index - 1];
-      newQueue[index - 1] = temp;
-      setQueue(newQueue);
-    }
-  };
+  // const moveUpInQueue = (index) => {
+  //   if (index > 0) {
+  //     const newQueue = [...queue];
+  //     const temp = newQueue[index];
+  //     newQueue[index] = newQueue[index - 1];
+  //     newQueue[index - 1] = temp;
+  //     setQueue(newQueue);
+  //   }
+  // };
 
-  const moveDownInQueue = (index) => {
-    if (index < queue.length - 1) {
-      const newQueue = [...queue];
-      const temp = newQueue[index];
-      newQueue[index] = newQueue[index + 1];
-      newQueue[index + 1] = temp;
-      setQueue(newQueue);
-    }
-  };
+  // const moveDownInQueue = (index) => {
+  //   if (index < queue.length - 1) {
+  //     const newQueue = [...queue];
+  //     const temp = newQueue[index];
+  //     newQueue[index] = newQueue[index + 1];
+  //     newQueue[index + 1] = temp;
+  //     setQueue(newQueue);
+  //   }
+  // };
 
-  const clearQueue = () => {
-    setQueue([]);
-  };
+  // const clearQueue = () => {
+  //   setQueue([]);
+  // };
 
   return (
     <div className="App">
       <div className="container">
-        <ToolBar
+        {/* <ToolBar
           isQueueOpen={isQueueOpen}
           toggleQueue={toggleQueue}
           queue={queue}
@@ -56,7 +56,7 @@ function App() {
           moveUpInQueue={moveUpInQueue}
           moveDownInQueue={moveDownInQueue}
           clearQueue={clearQueue}
-        />
+        /> */}
       </div>
       <YouTubeSearch queue={queue} setQueue={setQueue} />
     </div>

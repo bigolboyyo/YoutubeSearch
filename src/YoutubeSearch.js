@@ -88,7 +88,7 @@ const YouTubeSearch = ({ queue, setQueue }) => {
             // double check if a 2nd new search causes state/render issues
         */}
       </div>
-      <div>
+      <div className="video-container">
         {videoResultsPerPage && videoResultsPerPage.length > 0 ? (
           videoResultsPerPage.map((video) => (
             <div className="video" key={video.id.videoId}>
