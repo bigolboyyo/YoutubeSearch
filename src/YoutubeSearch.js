@@ -35,8 +35,6 @@ const YouTubeSearch = ({ queue, setQueue }) => {
       }
 
       setNextPageToken(data.nextPageToken || "");
-
-      console.log(apiUrl);
     } catch (error) {
       console.error(error);
       alert(
