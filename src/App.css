@@ -13,7 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("./images/mnt-ctg-bkg.jpg");
+  /* background-image: url("%PUBLIC_URL%/images/mnt-ctg-bkg-transformed.jpeg"); */
   background-repeat: no-repeat;
   background-size: cover;
   width: 100vw;
@@ -28,7 +28,8 @@ body {
 
 .user-input {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 1vw;
   align-items: center;
   padding: inherit;
 }
@@ -51,7 +52,6 @@ input[type="text"] {
   font-size: 18px;
   border: none;
   border-radius: 5px;
-  margin-bottom: 10px;
 }
 
 button {

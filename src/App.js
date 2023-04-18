@@ -1,6 +1,7 @@
 import { useState } from "react";
 import YouTubeSearch from "./YoutubeSearch";
 import "./App.css";
+import publicImage from "./publicImage";
 
 // import ToolBar from "./ToolBar";
 
@@ -45,7 +46,12 @@ function App() {
   // };
 
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{
+        backgroundImage: `url(${publicImage("mnt-ctg-bkg-transformed.jpeg")})`,
+      }}
+    >
       <div className="container">
         {/* <ToolBar
           isQueueOpen={isQueueOpen}

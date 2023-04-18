@@ -11,6 +11,7 @@ const YouTubeSearch = ({ queue, setQueue }) => {
   const { currentPage, goToPage, getPageItems, totalPages } = usePagination(10);
   const [nextPageToken, setNextPageToken] = useState("");
   const [morePageNumber, setMorePageNumber] = useState(5);
+  const [hasSearched, setHasSearched] = useState(false);
   const inputRef = useRef(null);
 
   const handleSearch = async (nextPage = "", newQuery = "") => {
@@ -44,9 +45,9 @@ const YouTubeSearch = ({ queue, setQueue }) => {
     }
   };
 
-  const handleQueue = (video) => {
-    setQueue([...queue, video]);
-  };
+  // const handleQueue = (video) => {
+  //   setQueue([...queue, video]);
+  // };
 
   const handlePageChange = async (newPage) => {
     const nextPage = newPage < 1 ? 1 : newPage;
@@ -60,6 +61,7 @@ const YouTubeSearch = ({ queue, setQueue }) => {
   const handleSearchClick = async () => {
     setSearchQuery(inputRef.current.value);
     await handleSearch("", searchQuery);
+    setHasSearched(true);
   };
 
   const videoResultsPerPage = getPageItems(videoResults);
@@ -89,30 +91,28 @@ const YouTubeSearch = ({ queue, setQueue }) => {
         */}
       </div>
       <div className="video-container">
-        {videoResultsPerPage && videoResultsPerPage.length > 0 ? (
-          videoResultsPerPage.map((video) => (
-            <div className="video" key={video.id.videoId}>
-              <iframe
-                title={video.snippet.title}
-                width="560"
-                height="315"
-                src={`https://www.youtube.com/embed/${video.id.videoId}`}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-              <a
-                href={`${YTS}${video.id.videoId}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <h3>{video.snippet.title}</h3>
-              </a>
-              <button onClick={() => handleQueue(video)}>Add to Queue</button>
-            </div>
-          ))
-        ) : (
-          <p>No videos found</p>
-        )}
+        {videoResultsPerPage && videoResultsPerPage.length > 0
+          ? videoResultsPerPage.map((video) => (
+              <div className="video" key={video.id.videoId}>
+                <iframe
+                  title={video.snippet.title}
+                  width="560"
+                  height="315"
+                  src={`https://www.youtube.com/embed/${video.id.videoId}`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+                <a
+                  href={`${YTS}${video.id.videoId}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <h3>{video.snippet.title}</h3>
+                </a>
+                {/* <button onClick={() => handleQueue(video)}>Add to Queue</button> */}
+              </div>
+            ))
+          : hasSearched && <p>No videos found</p>}
       </div>
     </div>
   );
