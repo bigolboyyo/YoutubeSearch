@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/YoutubeSearch/static/css/main.86b75ee3.css",
-    "main.js": "/YoutubeSearch/static/js/main.8b81083a.js",
-    "index.html": "/YoutubeSearch/index.html",
-    "main.86b75ee3.css.map": "/YoutubeSearch/static/css/main.86b75ee3.css.map",
-    "main.8b81083a.js.map": "/YoutubeSearch/static/js/main.8b81083a.js.map"
+    "main.css": "https://bigolboyyo.github.io/YoutubeSearch/static/css/main.86b75ee3.css",
+    "main.js": "https://bigolboyyo.github.io/YoutubeSearch/static/js/main.6efb0fcd.js",
+    "index.html": "https://bigolboyyo.github.io/YoutubeSearch/index.html",
+    "main.86b75ee3.css.map": "https://bigolboyyo.github.io/YoutubeSearch/static/css/main.86b75ee3.css.map",
+    "main.6efb0fcd.js.map": "https://bigolboyyo.github.io/YoutubeSearch/static/js/main.6efb0fcd.js.map"
   },
   "entrypoints": [
     "static/css/main.86b75ee3.css",
-    "static/js/main.8b81083a.js"
+    "static/js/main.6efb0fcd.js"
   ]
 }
