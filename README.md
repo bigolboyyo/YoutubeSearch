@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# YouTube Search Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple web application that utilizes the YouTube API to search for videos and implements custom pagination.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Search for videos using the YouTube API
+- Custom pagination for search results
+- Responsive design
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To run this project, you'll need to have [Node.js](https://nodejs.org/) installed on your machine.
 
-### `npm test`
+### Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository:
 
-### `npm run build`
+   `git clone https://github.com/yourusername/youtube-search-clone.git`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Install the dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```
+   cd youtube-search-clone
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Create a `.env` file in the root directory and add your YouTube API key:
 
-### `npm run eject`
+   `REACT_APP_YOUTUBE_API_KEY=your_api_key_here`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   Replace `your_api_key_here` with your actual API key.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Run the application:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   `npm start`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The application should now be running on `http://localhost:3000`.
 
-## Learn More
+## Future Plans
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Queueing Tool**: Implement a queueing tool to create custom playlists, allowing users to curate their own video lists.
+- **API Key Component**: Develop an API key input component for users to enter their own API keys on the deployed site, enhancing the flexibility of the application.
+- **Authentication**: Integrate login/signup functionality with authentication to enable users to create and manage their accounts.
+- **Sharing Playlists**: Allow users to share their playlists by generating profile links and providing options to share playlists with others.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Feel Free to Contribute
 
-### Code Splitting
+I welcome contributions to improve and expand the functionality of this Youtube Search Clone. Hopefully we can make it into a fun media sharing app. If you're interested in contributing, please follow these steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. **Fork the Repository**: Create your own fork of the project on GitHub.
+2. **Clone the Fork**: Clone your fork locally and create a new branch for your feature or bug fix.
+3. **Make Changes**: Make the necessary changes to the code, ensuring it adheres to the project's style and guidelines.
+4. **Commit and Push**: Commit your changes and push them to your fork.
+5. **Submit a Pull Request**: Create a pull request from your fork to the original repository, detailing the changes you've made and their purpose.
 
-### Analyzing the Bundle Size
+Before submitting a pull request, please ensure your code is well-documented and tested. I'll review your changes and provide feedback as necessary.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## License
 
-### Making a Progressive Web App
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Copyright (c) 2023 Wesley Grant
