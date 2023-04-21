@@ -2,13 +2,12 @@
 
 A simple web application that utilizes the YouTube API to search for videos and implements custom pagination.
 
-Deployment: https://bigolboyyo.github.io/YoutubeSearch/
-
 ## Features
 
 - Search for videos using the YouTube API
 - Custom pagination for search results
 - Responsive design
+- [Deployment](https://bigolboyyo.github.io/YoutubeSearch/)
 
 ## Getting Started
 
